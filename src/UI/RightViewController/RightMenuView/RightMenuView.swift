@@ -9,6 +9,6 @@
 import UIKit
 
 class RightMenuView: UIView {
-    @IBOutlet weak var tabelView: UITableView!
+    @IBOutlet var tabelView: UITableView?
 
 }

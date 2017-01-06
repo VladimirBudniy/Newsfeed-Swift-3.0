@@ -16,8 +16,6 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     typealias RootViewType = MainView
 
     var barTitle: String = "Всі новини"
-
-    var refreshControl: UIRefreshControl?
     
     var news: Array<News>? {
         didSet {
@@ -25,7 +23,7 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
         }
     }
     
-    var tableView: UITableView {
+    var tableView: UITableView? {
         return self.rootView.tabelView
     }
     
@@ -66,31 +64,27 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     // MARK: - Private
     
     private func reloadView() {
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
+        self.tableView?.reloadData()
+        self.tableView?.refreshControl?.endRefreshing()
         self.rootView.removeSpinnerView()
     }
     
     private func addRefreshControl() {
         let control = UIRefreshControl()
         
-        
+        // must add extension for UIRefreshControl
         let attribute = [NSForegroundColorAttributeName: UIColor.white,
                          NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 14)!]
-        control.tintColor = UIColor.white
         control.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attribute)
-        
-        
-        
+        control.tintColor = UIColor.white
         
         control.addTarget(self, action: #selector(load), for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(control)
-        self.refreshControl = control
+        self.tableView?.refreshControl = control
     }
     
     private func registerCellWithIdentifier(identifier: String) {
-        self.tableView.register(UINib(nibName: identifier, bundle: nil),
-                                forCellReuseIdentifier: identifier)
+        self.tableView?.register(UINib(nibName: identifier, bundle: nil),
+                                 forCellReuseIdentifier: identifier)
     }
     
     private func settingNavigationBar() {
@@ -104,7 +98,7 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
                                                             action: #selector(onOpenRight))
         
         
-        
+        // must add extension for UINavigationBar
         let attribute = [NSForegroundColorAttributeName: UIColor.white,
                          NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 16)!]
         let navigationBar = self.navigationController?.navigationBar
@@ -113,8 +107,8 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
         navigationBar?.backgroundColor = UIColor.clear
         navigationBar?.shadowImage = UIImage()
         navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-    
-    
+        
+        
     }
     
     @objc private func onOpenRight() {

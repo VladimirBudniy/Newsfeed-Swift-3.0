@@ -9,5 +9,5 @@
 import UIKit
 
 class MainView: LoadingView {
-    @IBOutlet weak var tabelView: UITableView!
+    @IBOutlet var tabelView: UITableView?
 }

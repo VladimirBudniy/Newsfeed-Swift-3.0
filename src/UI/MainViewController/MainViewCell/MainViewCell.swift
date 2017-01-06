@@ -11,12 +11,12 @@ import WebImage
 
 class MainViewCell: UITableViewCell {
     
-    @IBOutlet weak var pubDateLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageNews: UIImageView!
-    @IBOutlet weak var loadingView: UIView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var dateImageView: UIImageView!
+    @IBOutlet var pubDateLabel: UILabel?
+    @IBOutlet var titleLabel: UILabel?
+    @IBOutlet var imageNews: UIImageView?
+    @IBOutlet var loadingView: UIView?
+    @IBOutlet var spinner: UIActivityIndicatorView?
+    @IBOutlet var dateImageView: UIImageView?
     
     // MARK: - Initialization
     
@@ -28,15 +28,15 @@ class MainViewCell: UITableViewCell {
     
     func fillWithNews(news: News) {
         
-        self.spinner.startAnimating()
-        self.spinner.hidesWhenStopped = true
+        self.spinner?.startAnimating()
+        self.spinner?.hidesWhenStopped = true
         
-        self.dateImageView.image = UIImage.init(named: "time")
-        self.titleLabel.text = news.title
-        self.pubDateLabel.text = Date.correctStringDateFor(date: news.pubDate! as Date)
-        self.imageNews.sd_setImage(with: URL(string: news.urlString!),
+        self.dateImageView?.image = UIImage.init(named: "time")
+        self.titleLabel?.text = news.title
+        self.pubDateLabel?.text = Date.correctStringDateFor(date: news.pubDate! as Date)
+        self.imageNews?.sd_setImage(with: URL(string: news.urlString!),
                                    completed: ({ image, error, cacheType, imageURL in
-                                    self.spinner.stopAnimating()
+                                    self.spinner?.stopAnimating()
                                    }))
     }
 }

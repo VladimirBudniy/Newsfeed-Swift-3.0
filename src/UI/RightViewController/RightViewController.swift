@@ -13,7 +13,7 @@ class RightViewController: UIViewController, ViewControllerRootView, UITableView
 
     typealias RootViewType = RightMenuView
     
-    var tableView: UITableView {
+    var tableView: UITableView? {
         return self.rootView.tabelView
     }
     
@@ -56,6 +56,6 @@ class RightViewController: UIViewController, ViewControllerRootView, UITableView
     }
     
     private func registerCellWithIdentifier(identifier: String) {
-        self.tableView.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
+        self.tableView?.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
     }
 }

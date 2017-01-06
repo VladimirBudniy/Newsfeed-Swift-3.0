@@ -10,8 +10,8 @@ import UIKit
 
 class RightMenuCell: UITableViewCell {
 
-    @IBOutlet weak var categoryLogo: UIImageView!
-    @IBOutlet weak var categoryName: UILabel!
+    @IBOutlet var categoryLogo: UIImageView?
+    @IBOutlet var categoryName: UILabel?
     
     
     // MARK: - Initialization
@@ -24,8 +24,8 @@ class RightMenuCell: UITableViewCell {
     // MARK: - Public
     
     func fillWithCategory(category: String, imageName: String) {
-        self.categoryName.text = category
-        self.categoryLogo.image = UIImage(named: imageName)
+        self.categoryName?.text = category
+        self.categoryLogo?.image = UIImage(named: imageName)
     }
     
 }
