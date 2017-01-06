@@ -28,6 +28,22 @@
 		CF5B5A1C1E15568400D21F88 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B5A1B1E15568400D21F88 /* MainView.swift */; };
 		CF5B5A2E1E155ABE00D21F88 /* ParserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B5A2D1E155ABE00D21F88 /* ParserModel.swift */; };
 		CF5B5A311E15624E00D21F88 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B5A301E15624E00D21F88 /* NetworkModel.swift */; };
+		CF5EF9121E1F8801003278CF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9021E1F87F6003278CF /* Alamofire.framework */; };
+		CF5EF9131E1F8801003278CF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9021E1F87F6003278CF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5EF9141E1F8801003278CF /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9031E1F87F6003278CF /* MagicalRecord.framework */; };
+		CF5EF9151E1F8801003278CF /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9031E1F87F6003278CF /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5EF9161E1F8801003278CF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9041E1F87F6003278CF /* ReactiveCocoa.framework */; };
+		CF5EF9171E1F8801003278CF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9041E1F87F6003278CF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5EF9181E1F8801003278CF /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9051E1F87F6003278CF /* ReactiveSwift.framework */; };
+		CF5EF9191E1F8801003278CF /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9051E1F87F6003278CF /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5EF91A1E1F8801003278CF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9061E1F87F6003278CF /* Result.framework */; };
+		CF5EF91B1E1F8801003278CF /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9061E1F87F6003278CF /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5EF91C1E1F8801003278CF /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */; };
+		CF5EF91D1E1F8801003278CF /* SlideMenuControllerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5EF91E1E1F8801003278CF /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */; };
+		CF5EF91F1E1F8801003278CF /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5EF9201E1F8801003278CF /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9091E1F87F6003278CF /* WebImage.framework */; };
+		CF5EF9211E1F8801003278CF /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9091E1F87F6003278CF /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFCA60701E1B9A22004B110D /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA606F1E1B9A22004B110D /* SpinnerView.swift */; };
 		CFCA60721E1B9A2E004B110D /* SpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFCA60711E1B9A2E004B110D /* SpinnerView.xib */; };
 		CFEB109E1E169F9F00964A69 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB109D1E169F9F00964A69 /* NSManagedObject+Extension.swift */; };
@@ -42,6 +58,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CF5EF9151E1F8801003278CF /* MagicalRecord.framework in Embed Frameworks */,
+				CF5EF91F1E1F8801003278CF /* SWXMLHash.framework in Embed Frameworks */,
+				CF5EF9171E1F8801003278CF /* ReactiveCocoa.framework in Embed Frameworks */,
+				CF5EF91B1E1F8801003278CF /* Result.framework in Embed Frameworks */,
+				CF5EF91D1E1F8801003278CF /* SlideMenuControllerSwift.framework in Embed Frameworks */,
+				CF5EF9131E1F8801003278CF /* Alamofire.framework in Embed Frameworks */,
+				CF5EF9191E1F8801003278CF /* ReactiveSwift.framework in Embed Frameworks */,
+				CF5EF9211E1F8801003278CF /* WebImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +98,14 @@
 		CF5B5A261E1559BE00D21F88 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF5B5A2D1E155ABE00D21F88 /* ParserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserModel.swift; sourceTree = "<group>"; };
 		CF5B5A301E15624E00D21F88 /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		CF5EF9021E1F87F6003278CF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		CF5EF9031E1F87F6003278CF /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
+		CF5EF9041E1F87F6003278CF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		CF5EF9051E1F87F6003278CF /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		CF5EF9061E1F87F6003278CF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
+		CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
+		CF5EF9091E1F87F6003278CF /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		CFCA606F1E1B9A22004B110D /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		CFCA60711E1B9A2E004B110D /* SpinnerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpinnerView.xib; sourceTree = "<group>"; };
 		CFEB109D1E169F9F00964A69 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
@@ -86,6 +118,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF5EF9141E1F8801003278CF /* MagicalRecord.framework in Frameworks */,
+				CF5EF9121E1F8801003278CF /* Alamofire.framework in Frameworks */,
+				CF5EF9161E1F8801003278CF /* ReactiveCocoa.framework in Frameworks */,
+				CF5EF91C1E1F8801003278CF /* SlideMenuControllerSwift.framework in Frameworks */,
+				CF5EF91A1E1F8801003278CF /* Result.framework in Frameworks */,
+				CF5EF9181E1F8801003278CF /* ReactiveSwift.framework in Frameworks */,
+				CF5EF91E1E1F8801003278CF /* SWXMLHash.framework in Frameworks */,
+				CF5EF9201E1F8801003278CF /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +275,14 @@
 		CF5B59FB1E15544500D21F88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF5EF9021E1F87F6003278CF /* Alamofire.framework */,
+				CF5EF9031E1F87F6003278CF /* MagicalRecord.framework */,
+				CF5EF9041E1F87F6003278CF /* ReactiveCocoa.framework */,
+				CF5EF9051E1F87F6003278CF /* ReactiveSwift.framework */,
+				CF5EF9061E1F87F6003278CF /* Result.framework */,
+				CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */,
+				CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */,
+				CF5EF9091E1F87F6003278CF /* WebImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
