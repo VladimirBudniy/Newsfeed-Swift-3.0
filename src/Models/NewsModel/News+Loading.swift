@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import Alamofire
+import ReactiveCocoa
+import ReactiveSwift
+
+extension News {
+    
+    static func loadNews(for category: String) -> SignalProducer<[News], NSError> {
+        return SignalProducer { (observer, compositeDisposable) in
+            Alamofire.request("http://tsn.ua/rss").responseString { response in
+                if let XML = response.result.value {
+                    News.parsXML(xml: XML, by: category).startWithResult({ result in
+                        observer.send(value: result.value!)
+                        observer.sendCompleted()
+                    })
+                }
+            }
+        }
+    }
+    
+}

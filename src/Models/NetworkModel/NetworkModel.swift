@@ -17,7 +17,7 @@ class NetworkModel {
         return SignalProducer { (observer, compositeDisposable) in
             Alamofire.request("http://tsn.ua/rss").responseString { response in
                 if let XML = response.result.value {
-                    ParserModel.parsXML(xml: XML, by: category).startWithResult({ result in
+                    News.parsXML(xml: XML, by: category).startWithResult({ result in
                         observer.send(value: result.value!)
                         observer.sendCompleted()
                     })
