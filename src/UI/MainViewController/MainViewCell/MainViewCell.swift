@@ -31,7 +31,7 @@ class MainViewCell: UITableViewCell {
         self.spinner?.startAnimating()
         self.spinner?.hidesWhenStopped = true
         
-        self.dateImageView?.image = UIImage.init(named: "time")
+        self.dateImageView?.image = UIImage(named: "time")
         self.titleLabel?.text = news.title
         self.pubDateLabel?.text = Date.correctStringDateFor(date: news.pubDate! as Date)
         self.imageNews?.sd_setImage(with: URL(string: news.urlString!),
