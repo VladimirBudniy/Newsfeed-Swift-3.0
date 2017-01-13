@@ -30,10 +30,10 @@ extension News {
             }, completion: { (saved, error) in
                 if error == nil {
                     var news = [News]()
-                    if CategoriesStore[category] == "Всі новини" {
+                    if CategoriesForSearch[category] == "Всі новини" {
                         news = News.mr_findAllSorted(by: "pubDate", ascending: false, in: NSManagedObjectContext.mr_default()) as! [News]
                     } else {
-                        let predicate = NSPredicate(format: "newsCategory = %@", CategoriesStore[category]!)
+                        let predicate = NSPredicate(format: "newsCategory = %@", CategoriesForSearch[category]!)
                         news = News.mr_findAllSorted(by: "pubDate", ascending: false, with: predicate, in: NSManagedObjectContext.mr_default()) as! [News]
                     }
                     observer.send(value: news)

@@ -17,8 +17,6 @@ class RightViewController: UIViewController, ViewControllerRootView, UITableView
         return self.rootView.tabelView
     }
     
-    let categoryItems = Array(CategoriesStore.keys)
-    
     // MARK: - View LifeCycle
     
     override func viewDidLoad() {
@@ -29,13 +27,13 @@ class RightViewController: UIViewController, ViewControllerRootView, UITableView
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CategoriesStore.count
+        return CategoriesForSearch.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RightMenuCell.self)) as! RightMenuCell
-        let category = self.categoryItems[indexPath.row]
-        cell.fillWithCategory(category: category, imageName: CategoriesLogo[category]!)
+        let category = RightViewCategoriesNames[indexPath.row]
+        cell.fillWithCategory(category: category!, imageName: CategoriesLogo[category!]!)
         
         return cell
     }
@@ -44,7 +42,7 @@ class RightViewController: UIViewController, ViewControllerRootView, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        self.changeMainViewControllerFor(category: self.categoryItems[indexPath.row])
+        self.changeMainViewControllerFor(category: RightViewCategoriesNames[indexPath.row]!)
     }
     
     // MARK: - Private

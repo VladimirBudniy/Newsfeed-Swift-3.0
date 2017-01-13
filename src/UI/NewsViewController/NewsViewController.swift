@@ -14,7 +14,7 @@ class NewsViewController: UIViewController, ViewControllerRootView {
         
     var news: News?
     
-    var barTitle: String = "Всі новини" ////////////////////
+    var barTitle: String?
     
     var helveticaTextType: String = "HelveticaNeue-Medium"
     
@@ -44,7 +44,6 @@ class NewsViewController: UIViewController, ViewControllerRootView {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.rootView.showBlackSpinner()
         self.rootView.fillWith(news: self.news)
     }
 

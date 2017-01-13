@@ -22,21 +22,32 @@ class MainViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.settingView()
+        
     }
     
     // MARK: - Public
     
     func fillWithNews(news: News) {
-        
         self.spinner?.startAnimating()
         self.spinner?.hidesWhenStopped = true
+
+        let label = self.titleLabel
+        label?.text = news.title
+        label?.sizeToFit()
         
-        self.dateImageView?.image = UIImage(named: "time")
-        self.titleLabel?.text = news.title
         self.pubDateLabel?.text = Date.correctStringDateFor(date: news.pubDate! as Date)
         self.imageNews?.sd_setImage(with: URL(string: news.urlString!),
                                    completed: ({ image, error, cacheType, imageURL in
                                     self.spinner?.stopAnimating()
                                    }))
+    }
+    
+    // MARK: - Private
+    
+    private func settingView() {
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.darkGray
+        self.selectedBackgroundView = bgColorView
     }
 }
