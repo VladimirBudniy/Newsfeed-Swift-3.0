@@ -1,5 +1,5 @@
 //
-//  ReservCell.swift
+//  ReserveCell.swift
 //  Newsfeed-Swift
 //
 //  Created by Vladimir Budniy on 1/13/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReservCell: UITableViewCell {
+class ReserveCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

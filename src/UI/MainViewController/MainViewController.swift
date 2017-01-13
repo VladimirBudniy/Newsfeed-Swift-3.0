@@ -52,7 +52,7 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReservCell.self))
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReserveCell.self))
             tableView.rowHeight = (cell?.contentView.frame.size.height)!
             return cell!
         } else {
@@ -88,7 +88,7 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     
     private func registerCells() {
         let identifier = String(describing: MainViewCell.self)
-        let reservIdentifier = String(describing: ReservCell.self)   // reserv
+        let reservIdentifier = String(describing: ReserveCell.self)   // reserv
         
         self.tableView?.register(UINib(nibName: identifier, bundle: nil),
                                  forCellReuseIdentifier: identifier)
