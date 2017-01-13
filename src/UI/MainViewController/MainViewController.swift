@@ -51,11 +51,19 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell
-        
-        cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
-        
-        return cell
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReservCell.self))
+            tableView.rowHeight = (cell?.contentView.frame.size.height)!
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell
+            cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
+            tableView.rowHeight = cell.contentView.frame.size.height
+            return cell
+        }
+//        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell
+//        cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
+//        return cell
     }
 
     // MARK: - UITableViewDelegate
@@ -80,8 +88,12 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     
     private func registerCells() {
         let identifier = String(describing: MainViewCell.self)
+        let reservIdentifier = String(describing: ReservCell.self)   // reserv
+        
         self.tableView?.register(UINib(nibName: identifier, bundle: nil),
                                  forCellReuseIdentifier: identifier)
+        self.tableView?.register(UINib(nibName: reservIdentifier, bundle: nil),  // reserv
+                                 forCellReuseIdentifier: reservIdentifier)
     }
     
     private func settingNavigationBar() {
