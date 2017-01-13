@@ -60,7 +60,7 @@ class NewsView: LoadingView {
         let currentViewHeight = self.fullTextLabel.frame.size.height + self.fullTextLabel.frame.origin.y
         
         if currentViewHeight < superViewHeight {
-            return superViewHeight * 1.2
+            return superViewHeight
         }
         
         return currentViewHeight * 1.2
