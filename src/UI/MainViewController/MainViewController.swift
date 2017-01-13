@@ -17,7 +17,9 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
 
     var barTitle: String = "Всі новини"
     
-    var news: Array<News>? {
+    var helveticaTextType: String = "HelveticaNeue-Medium"
+    
+    var newsArray: Array<News>? {
         didSet {
             self.reloadView()
         }
@@ -45,12 +47,12 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.news?.count ?? 0
+        return self.newsArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell
-        cell.fillWithNews(news: (self.news?[indexPath.row])!)
+        cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
         
         return cell
     }
@@ -59,10 +61,12 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        let controller = NewsViewController(news: self.newsArray?[indexPath.row])
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Private
-    
+
     private func reloadView() {
         self.tableView?.reloadData()
         self.tableView?.refreshControl?.endRefreshing()
@@ -70,16 +74,7 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     }
     
     private func addRefreshControl() {
-        let control = UIRefreshControl()
-        
-        // must add extension for UIRefreshControl
-        let attribute = [NSForegroundColorAttributeName: UIColor.white,
-                         NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 14)!]
-        control.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attribute)
-        control.tintColor = UIColor.white
-        
-        control.addTarget(self, action: #selector(load), for: UIControlEvents.valueChanged)
-        self.tableView?.refreshControl = control
+        self.tableView?.refreshControl = self.customRefreshControl()
     }
     
     private func registerCellWithIdentifier(identifier: String) {
@@ -88,34 +83,15 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     }
     
     private func settingNavigationBar() {
-        
-        ////////////////////////////////////////////////////////////////////////////////////
-        let navigationItem = self.navigationItem
-        navigationItem.title = self.barTitle
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "categories")!,
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(onOpenRight))
-        
-        
-        // must add extension for UINavigationBar
-        let attribute = [NSForegroundColorAttributeName: UIColor.white,
-                         NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 16)!]
-        let navigationBar = self.navigationController?.navigationBar
-        navigationBar?.titleTextAttributes = attribute
-        navigationBar?.tintColor = UIColor.white
-        navigationBar?.backgroundColor = UIColor.clear
-        navigationBar?.shadowImage = UIImage()
-        navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        
-        
+        self.customNavigationItem(imageButton: UIImage(named: "categories")!)
+        self.customNavigationBar()
     }
     
     @objc private func onOpenRight() {
         self.slideMenuController()?.openRight()
     }
     
-    @objc private func load() {  ///////////////////////////////////////////////////
+    @objc private func load() {
         self.loadNews(for: self.barTitle)
     }
     
@@ -124,8 +100,39 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
         LoadModel.loadNewsByCategory(category: category)
             .observe(on: UIScheduler())
             .startWithResult({ result in
-                self.news = result.value
+                self.newsArray = result.value
             })
+    }
+    
+    private func customNavigationItem(imageButton: UIImage) {
+        let navigationItem = self.navigationItem
+        navigationItem.title = self.barTitle
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: imageButton,
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(onOpenRight))
+    }
+    
+    private func customNavigationBar() {
+        let navigationBar = self.navigationController?.navigationBar
+        let attribute = [NSForegroundColorAttributeName: UIColor.white,
+                         NSFontAttributeName: UIFont(name: helveticaTextType, size: 16)!]
+        navigationBar?.titleTextAttributes = attribute
+        navigationBar?.tintColor = UIColor.white
+        navigationBar?.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
+        navigationBar?.shadowImage = UIImage()
+        navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+    }
+    
+    private func customRefreshControl() -> UIRefreshControl {
+        let control = UIRefreshControl()
+        let attribute = [NSForegroundColorAttributeName: UIColor.white,
+                         NSFontAttributeName: UIFont(name: helveticaTextType, size: 12)!]
+        control.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attribute)
+        control.tintColor = UIColor.white
+        control.addTarget(self, action: #selector(load), for: UIControlEvents.valueChanged)
+        
+        return control
     }
 
 }

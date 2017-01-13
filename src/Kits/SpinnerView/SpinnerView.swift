@@ -10,7 +10,7 @@ import UIKit
 
 class SpinnerView: UIView {
     
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet var spinner: UIActivityIndicatorView?
 
     // MARK: - Public
     

@@ -14,19 +14,24 @@ class LoadingView: UIView {
     
     // MARK: - Public
     
-    public func showSpinner() {
+    public func showSpinner(color: UIColor = UIColor.white) {
         var view = self.spinner
         if view == nil {
             view = SpinnerView.loadSpinner()
+            view?.spinner?.color = color
             self.spinner = view
             view?.frame = self.frame
-            view?.spinner.startAnimating()
+            view?.spinner?.startAnimating()
         }
         
         UIView.animate(withDuration: 1.0, animations: {
             view?.alpha = 0.6
             self.addSubview(view!)
         })
+    }
+    
+    public func showBlackSpinner() {
+        self.showSpinner(color: UIColor.black)
     }
     
     public func removeSpinnerView() {

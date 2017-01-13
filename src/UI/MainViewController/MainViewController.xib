@@ -19,8 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wJk-eG-UuY">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFG-pw-yMa">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wJk-eG-UuY">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="yHy-l9-ODK"/>
@@ -30,14 +34,14 @@
             </subviews>
             <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="wJk-eG-UuY" secondAttribute="trailing" id="1Ac-Dt-qc0"/>
-                <constraint firstAttribute="trailing" secondItem="wJk-eG-UuY" secondAttribute="trailing" id="582-Wd-pBw"/>
-                <constraint firstItem="wJk-eG-UuY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dva-gL-fdm"/>
-                <constraint firstItem="wJk-eG-UuY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iAY-Bc-gZj"/>
-                <constraint firstItem="wJk-eG-UuY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="p6B-2V-P2D"/>
-                <constraint firstAttribute="bottom" secondItem="wJk-eG-UuY" secondAttribute="bottom" id="s6C-pO-Fx4"/>
-                <constraint firstAttribute="bottom" secondItem="wJk-eG-UuY" secondAttribute="bottom" id="t2U-TO-HhL"/>
-                <constraint firstItem="wJk-eG-UuY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vKH-JS-b9a"/>
+                <constraint firstAttribute="trailing" secondItem="wJk-eG-UuY" secondAttribute="trailing" id="0YH-7A-r2R"/>
+                <constraint firstItem="hFG-pw-yMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3OV-nR-yNt"/>
+                <constraint firstAttribute="bottom" secondItem="hFG-pw-yMa" secondAttribute="bottom" id="8Js-Ll-Zi4"/>
+                <constraint firstItem="wJk-eG-UuY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="O0Q-Xt-hIx"/>
+                <constraint firstItem="wJk-eG-UuY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SLW-Vb-XVA"/>
+                <constraint firstItem="hFG-pw-yMa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="U4S-g7-4JG"/>
+                <constraint firstAttribute="bottom" secondItem="wJk-eG-UuY" secondAttribute="bottom" id="sRW-XX-H8b"/>
+                <constraint firstAttribute="trailing" secondItem="hFG-pw-yMa" secondAttribute="trailing" id="yS1-cp-DET"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
