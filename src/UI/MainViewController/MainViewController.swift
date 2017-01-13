@@ -51,12 +51,13 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if (indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReserveCell.self))
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReserveCell.self))   // reserve cell !!!remove duplication
             tableView.rowHeight = (cell?.contentView.frame.size.height)!
             return cell!
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell  // reserve cell !!!remove duplication
             cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
             tableView.rowHeight = cell.contentView.frame.size.height
             return cell
@@ -88,12 +89,12 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     
     private func registerCells() {
         let identifier = String(describing: MainViewCell.self)
-        let reservIdentifier = String(describing: ReserveCell.self)   // reserv
+        let reserveIdentifier = String(describing: ReserveCell.self)   // reserve cell
         
         self.tableView?.register(UINib(nibName: identifier, bundle: nil),
                                  forCellReuseIdentifier: identifier)
-        self.tableView?.register(UINib(nibName: reservIdentifier, bundle: nil),  // reserv
-                                 forCellReuseIdentifier: reservIdentifier)
+        self.tableView?.register(UINib(nibName: reserveIdentifier, bundle: nil),  // reserve cell
+                                 forCellReuseIdentifier: reserveIdentifier)
     }
     
     private func settingNavigationBar() {
