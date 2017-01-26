@@ -35,6 +35,7 @@
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3d-JI-7Zj">
                                     <rect key="frame" x="0.0" y="0.0" width="371" height="250"/>
+                                    <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="V3d-JI-7Zj" secondAttribute="height" multiplier="371:250" id="G7I-in-7fo"/>
                                     </constraints>

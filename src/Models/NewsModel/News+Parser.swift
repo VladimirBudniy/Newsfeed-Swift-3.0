@@ -20,7 +20,7 @@ extension News {
                 let newsXML = SWXMLHash.parse(xml)
                 for index in 1...700 {
                     let news = News.mr_createEntity(in: context)
-                    news?.fullText = newsXML["rss"]["channel"]["item"][index]["fulltext"].element!.text
+//                    news?.fullText = newsXML["rss"]["channel"]["item"][index]["fulltext"].element!.text
                     news?.newsCategory = newsXML["rss"]["channel"]["item"][index]["category"].element!.text
                     news?.title = newsXML["rss"]["channel"]["item"][index]["title"].element!.text
                     let stringDate = newsXML["rss"]["channel"]["item"][index]["pubDate"].element!.text
@@ -30,10 +30,10 @@ extension News {
             }, completion: { (saved, error) in
                 if error == nil {
                     var news = [News]()
-                    if CategoriesStore[category] == "Всі новини" {
+                    if CategoriesForSearch[category] == "Всі новини" {
                         news = News.mr_findAllSorted(by: "pubDate", ascending: false, in: NSManagedObjectContext.mr_default()) as! [News]
                     } else {
-                        let predicate = NSPredicate(format: "newsCategory = %@", CategoriesStore[category]!)
+                        let predicate = NSPredicate(format: "newsCategory = %@", CategoriesForSearch[category]!)
                         news = News.mr_findAllSorted(by: "pubDate", ascending: false, with: predicate, in: NSManagedObjectContext.mr_default()) as! [News]
                     }
                     observer.send(value: news)

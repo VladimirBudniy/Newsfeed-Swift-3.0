@@ -35,7 +35,7 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
         super.viewDidLoad()
         self.settingNavigationBar()
         self.addRefreshControl()
-        self.registerCellWithIdentifier(identifier: String(describing: MainViewCell.self))
+        self.registerCells()
         self.loadNews(for: self.barTitle)
     }
     
@@ -51,14 +51,24 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell
-        cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
         
-        return cell
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReserveCell.self))   // reserve cell !!!remove duplication
+            tableView.rowHeight = (cell?.contentView.frame.size.height)!
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell  // reserve cell !!!remove duplication
+            cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
+            tableView.rowHeight = cell.contentView.frame.size.height
+            return cell
+        }
+//        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainViewCell.self)) as! MainViewCell
+//        cell.fillWithNews(news: (self.newsArray?[indexPath.row])!)
+//        return cell
     }
 
     // MARK: - UITableViewDelegate
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         let controller = NewsViewController(news: self.newsArray?[indexPath.row])
@@ -77,9 +87,14 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
         self.tableView?.refreshControl = self.customRefreshControl()
     }
     
-    private func registerCellWithIdentifier(identifier: String) {
+    private func registerCells() {
+        let identifier = String(describing: MainViewCell.self)
+        let reserveIdentifier = String(describing: ReserveCell.self)   // reserve cell
+        
         self.tableView?.register(UINib(nibName: identifier, bundle: nil),
                                  forCellReuseIdentifier: identifier)
+        self.tableView?.register(UINib(nibName: reserveIdentifier, bundle: nil),  // reserve cell
+                                 forCellReuseIdentifier: reserveIdentifier)
     }
     
     private func settingNavigationBar() {
@@ -92,7 +107,13 @@ class MainViewController: UIViewController, ViewControllerRootView, UITableViewD
     }
     
     @objc private func load() {
-        self.loadNews(for: self.barTitle)
+        self.rootView.showSpinner()
+        let category = self.barTitle
+        LoadModel.networkLoadBy(category: category)
+            .observe(on: UIScheduler())
+            .startWithResult({ result in
+                self.newsArray = result.value
+            })
     }
     
     private func loadNews(for category: String) {

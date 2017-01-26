@@ -42,6 +42,8 @@
 		CF5EF91F1E1F8801003278CF /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF5EF9201E1F8801003278CF /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9091E1F87F6003278CF /* WebImage.framework */; };
 		CF5EF9211E1F8801003278CF /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9091E1F87F6003278CF /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF9E9BBD1E293046000258F8 /* ReserveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E9BBB1E293046000258F8 /* ReserveCell.swift */; };
+		CF9E9BBE1E293046000258F8 /* ReserveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF9E9BBC1E293046000258F8 /* ReserveCell.xib */; };
 		CFA5543A1E24F7AB008F3CC9 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA554391E24F7AB008F3CC9 /* NSManagedObject+Extension.swift */; };
 		CFA5543C1E24FD00008F3CC9 /* News+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5543B1E24FD00008F3CC9 /* News+Parser.swift */; };
 		CFA554401E24FE3E008F3CC9 /* News+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5543F1E24FE3E008F3CC9 /* News+Loading.swift */; };
@@ -107,6 +109,8 @@
 		CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
 		CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
 		CF5EF9091E1F87F6003278CF /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		CF9E9BBB1E293046000258F8 /* ReserveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReserveCell.swift; sourceTree = "<group>"; };
+		CF9E9BBC1E293046000258F8 /* ReserveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReserveCell.xib; sourceTree = "<group>"; };
 		CFA554391E24F7AB008F3CC9 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		CFA5543B1E24FD00008F3CC9 /* News+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+Parser.swift"; sourceTree = "<group>"; };
 		CFA5543F1E24FE3E008F3CC9 /* News+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+Loading.swift"; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 		CF5B5A091E1554C400D21F88 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CF9E9BBA1E293046000258F8 /* ReserveCell */,
 				CF5B5A1A1E15567C00D21F88 /* MainView */,
 				CFEB109F1E16AB8500964A69 /* MainViewCell */,
 				CF5B5A0F1E15550100D21F88 /* MainViewController.swift */,
@@ -331,6 +336,15 @@
 				CFA5543F1E24FE3E008F3CC9 /* News+Loading.swift */,
 			);
 			path = NewsModel;
+			sourceTree = "<group>";
+		};
+		CF9E9BBA1E293046000258F8 /* ReserveCell */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E9BBB1E293046000258F8 /* ReserveCell.swift */,
+				CF9E9BBC1E293046000258F8 /* ReserveCell.xib */,
+			);
+			path = ReserveCell;
 			sourceTree = "<group>";
 		};
 		CFA554411E251607008F3CC9 /* NewsViewController */ = {
@@ -431,6 +445,7 @@
 			files = (
 				CF5B59E81E154B7E00D21F88 /* LaunchScreen.storyboard in Resources */,
 				CFEB10A71E16ABAD00964A69 /* MainViewCell.xib in Resources */,
+				CF9E9BBE1E293046000258F8 /* ReserveCell.xib in Resources */,
 				CF5B5A161E15550D00D21F88 /* RightViewController.xib in Resources */,
 				CFA554461E25162C008F3CC9 /* NewsViewController.xib in Resources */,
 				CFCA60721E1B9A2E004B110D /* SpinnerView.xib in Resources */,
@@ -449,6 +464,7 @@
 			files = (
 				CFEB10A61E16ABAD00964A69 /* MainViewCell.swift in Sources */,
 				CF1B06D51E1E5BB100DA371F /* HelperConstants.swift in Sources */,
+				CF9E9BBD1E293046000258F8 /* ReserveCell.swift in Sources */,
 				CF5B5A1C1E15568400D21F88 /* MainView.swift in Sources */,
 				CFA554481E25163B008F3CC9 /* NewsView.swift in Sources */,
 				CFA554451E25162C008F3CC9 /* NewsViewController.swift in Sources */,

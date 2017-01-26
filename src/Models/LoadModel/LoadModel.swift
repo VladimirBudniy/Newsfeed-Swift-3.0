@@ -15,7 +15,7 @@ class LoadModel {
 
     static func loadNewsByCategory(category: String) -> SignalProducer<[News], NSError> {
         return SignalProducer { (observer, compositeDisposable) in
-            self.loadFromStoreBy(category: CategoriesStore[category]!).startWithResult({ result in
+            self.loadFromStoreBy(category: CategoriesForSearch[category]!).startWithResult({ result in
                 if result.value != nil {
                     observer.send(value: result.value!)
                     observer.sendCompleted()
@@ -31,8 +31,15 @@ class LoadModel {
     
     class func loadFromStoreBy(category: String) -> SignalProducer<[News], NSError> {
         return SignalProducer { (observer, compositeDisposable) in
-            let predicate = NSPredicate(format: "newsCategory = %@", category)
-            let request = News.mr_findAllSorted(by: "pubDate", ascending: false, with: predicate, in: NSManagedObjectContext.mr_default()) as! [News]
+            
+            var request = [News]()
+            if category == "Всі новини" {
+                request = News.mr_findAllSorted(by: "pubDate", ascending: false, in: NSManagedObjectContext.mr_default()) as! [News]
+            } else {
+                let predicate = NSPredicate(format: "newsCategory = %@", category)
+                request = News.mr_findAllSorted(by: "pubDate", ascending: false, with: predicate, in: NSManagedObjectContext.mr_default()) as! [News]
+            }
+            
             if request.count != 0 {
                 observer.send(value: request)
                 observer.sendCompleted()
