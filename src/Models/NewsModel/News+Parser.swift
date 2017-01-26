@@ -20,7 +20,7 @@ extension News {
                 let newsXML = SWXMLHash.parse(xml)
                 for index in 1...700 {
                     let news = News.mr_createEntity(in: context)
-                    news?.fullText = newsXML["rss"]["channel"]["item"][index]["fulltext"].element!.text
+//                    news?.fullText = newsXML["rss"]["channel"]["item"][index]["fulltext"].element!.text
                     news?.newsCategory = newsXML["rss"]["channel"]["item"][index]["category"].element!.text
                     news?.title = newsXML["rss"]["channel"]["item"][index]["title"].element!.text
                     let stringDate = newsXML["rss"]["channel"]["item"][index]["pubDate"].element!.text
