@@ -12,14 +12,14 @@ import CoreData
 
 extension News {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<News> {
-        return NSFetchRequest<News>(entityName: "News");
-    }
-
-    @NSManaged public var fullText: String?
-    @NSManaged public var newsCategory: String?
-    @NSManaged public var pubDate: NSDate?
-    @NSManaged public var title: String?
-    @NSManaged public var urlString: String?
+//    @nonobjc public class func fetchRequest() -> NSFetchRequest<News> {
+//        return NSFetchRequest<News>(entityName: "News");
+//    }
+//
+//    @NSManaged public var fullText: String?
+//    @NSManaged public var newsCategory: String?
+//    @NSManaged public var pubDate: NSDate?
+//    @NSManaged public var title: String?
+//    @NSManaged public var urlString: String?
 
 }

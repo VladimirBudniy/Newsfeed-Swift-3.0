@@ -31,7 +31,6 @@ class LoadModel {
     
     class func loadFromStoreBy(category: String) -> SignalProducer<[News], NSError> {
         return SignalProducer { (observer, compositeDisposable) in
-            
             var request = [News]()
             if category == "Всі новини" {
                 request = News.mr_findAllSorted(by: "pubDate", ascending: false, in: NSManagedObjectContext.mr_default()) as! [News]

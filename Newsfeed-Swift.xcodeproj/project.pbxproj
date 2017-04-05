@@ -26,6 +26,9 @@
 		CF5B5A151E15550D00D21F88 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B5A131E15550D00D21F88 /* RightViewController.swift */; };
 		CF5B5A161E15550D00D21F88 /* RightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5B5A141E15550D00D21F88 /* RightViewController.xib */; };
 		CF5B5A1C1E15568400D21F88 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B5A1B1E15568400D21F88 /* MainView.swift */; };
+		CF5CA2061E94D97800378DC1 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5CA2041E94D97100378DC1 /* SDWebImage.framework */; };
+		CF5CA2071E94D97800378DC1 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5CA2041E94D97100378DC1 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5CA2091E94EA0600378DC1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CA2081E94EA0600378DC1 /* String+Extension.swift */; };
 		CF5EF9121E1F8801003278CF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9021E1F87F6003278CF /* Alamofire.framework */; };
 		CF5EF9131E1F8801003278CF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9021E1F87F6003278CF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF5EF9141E1F8801003278CF /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9031E1F87F6003278CF /* MagicalRecord.framework */; };
@@ -40,8 +43,6 @@
 		CF5EF91D1E1F8801003278CF /* SlideMenuControllerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF5EF91E1E1F8801003278CF /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */; };
 		CF5EF91F1E1F8801003278CF /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CF5EF9201E1F8801003278CF /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9091E1F87F6003278CF /* WebImage.framework */; };
-		CF5EF9211E1F8801003278CF /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5EF9091E1F87F6003278CF /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF9E9BBD1E293046000258F8 /* ReserveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E9BBB1E293046000258F8 /* ReserveCell.swift */; };
 		CF9E9BBE1E293046000258F8 /* ReserveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF9E9BBC1E293046000258F8 /* ReserveCell.xib */; };
 		CFA5543A1E24F7AB008F3CC9 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA554391E24F7AB008F3CC9 /* NSManagedObject+Extension.swift */; };
@@ -63,6 +64,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CF5CA2071E94D97800378DC1 /* SDWebImage.framework in Embed Frameworks */,
 				CF5EF9151E1F8801003278CF /* MagicalRecord.framework in Embed Frameworks */,
 				CF5EF91F1E1F8801003278CF /* SWXMLHash.framework in Embed Frameworks */,
 				CF5EF9171E1F8801003278CF /* ReactiveCocoa.framework in Embed Frameworks */,
@@ -70,7 +72,6 @@
 				CF5EF91D1E1F8801003278CF /* SlideMenuControllerSwift.framework in Embed Frameworks */,
 				CF5EF9131E1F8801003278CF /* Alamofire.framework in Embed Frameworks */,
 				CF5EF9191E1F8801003278CF /* ReactiveSwift.framework in Embed Frameworks */,
-				CF5EF9211E1F8801003278CF /* WebImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +102,8 @@
 		CF5B5A1B1E15568400D21F88 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CF5B5A251E1559BE00D21F88 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CF5B5A261E1559BE00D21F88 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF5CA2041E94D97100378DC1 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		CF5CA2081E94EA0600378DC1 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CF5EF9021E1F87F6003278CF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		CF5EF9031E1F87F6003278CF /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
 		CF5EF9041E1F87F6003278CF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		CF5EF9061E1F87F6003278CF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
 		CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
-		CF5EF9091E1F87F6003278CF /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		CF9E9BBB1E293046000258F8 /* ReserveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReserveCell.swift; sourceTree = "<group>"; };
 		CF9E9BBC1E293046000258F8 /* ReserveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReserveCell.xib; sourceTree = "<group>"; };
 		CFA554391E24F7AB008F3CC9 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
@@ -135,7 +137,7 @@
 				CF5EF91A1E1F8801003278CF /* Result.framework in Frameworks */,
 				CF5EF9181E1F8801003278CF /* ReactiveSwift.framework in Frameworks */,
 				CF5EF91E1E1F8801003278CF /* SWXMLHash.framework in Frameworks */,
-				CF5EF9201E1F8801003278CF /* WebImage.framework in Frameworks */,
+				CF5CA2061E94D97800378DC1 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +183,7 @@
 			children = (
 				CFA554391E24F7AB008F3CC9 /* NSManagedObject+Extension.swift */,
 				CF2D01D91E1BCB4F0026CA63 /* Date+Extention.swift */,
+				CF5CA2081E94EA0600378DC1 /* String+Extension.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 		CF5B59FB1E15544500D21F88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF5CA2041E94D97100378DC1 /* SDWebImage.framework */,
 				CF5EF9021E1F87F6003278CF /* Alamofire.framework */,
 				CF5EF9031E1F87F6003278CF /* MagicalRecord.framework */,
 				CF5EF9041E1F87F6003278CF /* ReactiveCocoa.framework */,
@@ -291,7 +295,6 @@
 				CF5EF9061E1F87F6003278CF /* Result.framework */,
 				CF5EF9071E1F87F6003278CF /* SlideMenuControllerSwift.framework */,
 				CF5EF9081E1F87F6003278CF /* SWXMLHash.framework */,
-				CF5EF9091E1F87F6003278CF /* WebImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -411,7 +414,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Vladimir Budniy";
 				TargetAttributes = {
 					CF5B59D61E154B7E00D21F88 = {
@@ -474,6 +477,7 @@
 				CFA5543A1E24F7AB008F3CC9 /* NSManagedObject+Extension.swift in Sources */,
 				CF00C7821E1D56B400D4A335 /* LoadModel.swift in Sources */,
 				CFCA60701E1B9A22004B110D /* SpinnerView.swift in Sources */,
+				CF5CA2091E94EA0600378DC1 /* String+Extension.swift in Sources */,
 				CF1B06D91E1E949600DA371F /* HelperClearCache.swift in Sources */,
 				CFA554401E24FE3E008F3CC9 /* News+Loading.swift in Sources */,
 				CF5B59E31E154B7E00D21F88 /* Newsfeed_Swift.xcdatamodeld in Sources */,
@@ -520,6 +524,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -571,6 +576,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

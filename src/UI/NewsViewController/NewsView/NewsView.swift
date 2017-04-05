@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WebImage
+import SDWebImage
 
 class NewsView: LoadingView {
     @IBOutlet var scrollView: UIScrollView?

@@ -11,7 +11,7 @@ import CoreData
 import ReactiveCocoa
 import ReactiveSwift
 import MagicalRecord
-import WebImage
+import SDWebImage
 
 extension NSManagedObject {
     

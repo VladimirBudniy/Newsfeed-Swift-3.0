@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import WebImage
+import SDWebImage
 
 func cleanCache() {
     let imageCache = SDImageCache.shared()
-    imageCache?.clearMemory()
-    imageCache?.cleanDisk()
+    imageCache.clearMemory()
 }

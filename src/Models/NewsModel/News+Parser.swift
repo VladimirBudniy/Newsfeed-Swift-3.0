@@ -20,11 +20,10 @@ extension News {
                 let newsXML = SWXMLHash.parse(xml)
                 for index in 1...700 {
                     let news = News.mr_createEntity(in: context)
-//                    news?.fullText = newsXML["rss"]["channel"]["item"][index]["fulltext"].element!.text
-                    news?.newsCategory = newsXML["rss"]["channel"]["item"][index]["category"].element!.text
-                    news?.title = newsXML["rss"]["channel"]["item"][index]["title"].element!.text
-                    let stringDate = newsXML["rss"]["channel"]["item"][index]["pubDate"].element!.text
-                    news?.pubDate = Date.convertDateFromString(string: stringDate!) as NSDate?
+                    news?.fullText = replace(newsXML["rss"]["channel"]["item"][index]["fulltext"].element?.children[1].description)
+                    news?.newsCategory = replace(newsXML["rss"]["channel"]["item"][index]["category"].element?.children[1].description)
+                    news?.title = replace(newsXML["rss"]["channel"]["item"][index]["title"].element?.children[1].description)
+                    news?.pubDate = convertDate(newsXML["rss"]["channel"]["item"][index]["pubDate"].element!.text)
                     news?.urlString = newsXML["rss"]["channel"]["item"][index]["enclosure"].element!.attribute(by: "url")?.text
                 }
             }, completion: { (saved, error) in
@@ -42,5 +41,20 @@ extension News {
             })
         }
     }
+}
+
+fileprivate func replace(_ string: String?) -> String? {
+    if let string = string {
+        return string.stringReplace(string, ["&quot;", "&#039;", "&#13;"], ["\"", "\'", "\n"])
+    }
     
+    return nil
+}
+
+fileprivate func convertDate(_ string: String?) -> NSDate? {
+    if let string = string {
+        return Date.convertDateFromString(string: string) as NSDate
+    }
+    
+    return nil
 }
