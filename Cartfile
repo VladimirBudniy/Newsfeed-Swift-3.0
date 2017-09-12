@@ -1,6 +1,6 @@
-github "ReactiveCocoa/ReactiveCocoa" "5.0.0-rc.1"
+github "ReactiveCocoa/ReactiveCocoa" ~> 6.0
 github "MagicalPanda/MagicalRecord"
-github "drmohundro/SWXMLHash" ~> 3.0
+github "drmohundro/SWXMLHash" ~> 4.0
 github "rs/SDWebImage"
 github "dekatotoro/SlideMenuControllerSwift"
-github "Alamofire/Alamofire" ~> 4.0
+github "Alamofire/Alamofire" ~> 4.5

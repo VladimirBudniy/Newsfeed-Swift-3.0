@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         MagicalRecord.setupCoreDataStack(withStoreNamed: "Newsfeed_Swift")
         UIApplication.shared.statusBarStyle = .lightContent

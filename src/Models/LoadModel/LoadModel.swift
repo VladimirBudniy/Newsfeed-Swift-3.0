@@ -53,7 +53,7 @@ class LoadModel {
         return SignalProducer { (observer, compositeDisposable) in
             News.deleteAllEntities()
                 .flatMap(FlattenStrategy.latest,
-                         transform: { result in News.loadNews(for: category)
+                         { result in News.loadNews(for: category)
                 })
                 .observe(on: UIScheduler())
                 .startWithResult( { result in
